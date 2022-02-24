@@ -7,7 +7,7 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            //TODO
+            //  **OLD TODO***
             //Done **** Separate Tab *** - Create a seperate class file called Car
             //Done **** Separate Tab *** - Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
             //Done **** Separate Tab ***  - Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
@@ -19,7 +19,9 @@ namespace CarLotSimulator
             //Set the properties for each of the cars
             //Call each of the methods for each car
 
-            var westLot = new CarLot();
+
+            // DONE -- includes changes in CarLot Tab. CURRENT TODO ** Exercise 2: Building on our car lot simulator project, create a CarLot class with a static field called numberOfCars. Have this number only increment when in our program we create a new Car. From there create 3 cars in the Main() and then each time you create a car, do a Console.WriteLine() printing the current number of cars in the car lot. 
+
 
             // Using Dot Notation
             var carOne = new Car();
@@ -30,7 +32,8 @@ namespace CarLotSimulator
             carOne.HonkNoise = "beep-beep";
             carOne.IsDrivable = true;
             // adding this car to our carLot
-            westLot.CarList.Add(carOne);
+            CarLot.AddCar(carOne);
+            CarLot.PrintLotData();
 
             // Object initializer cyntax
             var carTwo = new Car()
@@ -42,31 +45,28 @@ namespace CarLotSimulator
                 HonkNoise = "bleep",
                 IsDrivable = true
             };
-            westLot.CarList.Add(carTwo);
-
+            CarLot.AddCar(carTwo);
+            CarLot.PrintLotData();
 
             // Using a constructor
             var carThree = new Car(2013, "Honda", "Civic", "vrrrroom", "vruuuga", true);
-            westLot.CarList.Add(carThree);
+            CarLot.AddCar(carThree);
+            CarLot.PrintLotData();
+
 
             //Calling methods
-            Console.WriteLine($"This is the list of engine noises:");
-            carOne.MakeEngineNoise(carOne.EngineNoise);
-            carTwo.MakeEngineNoise(carTwo.EngineNoise);
-            carThree.MakeEngineNoise(carThree.EngineNoise);
-            Console.WriteLine();
-            Console.WriteLine($"This is the list of honking noises:");
-            carOne.MakeHonkNoise(carOne.HonkNoise);
-            carTwo.MakeHonkNoise(carTwo.HonkNoise);
-            carThree.MakeHonkNoise(carThree.HonkNoise);
-            Console.WriteLine();
+            //Console.WriteLine($"This is the list of engine noises:");
+            //carOne.MakeEngineNoise(carOne.EngineNoise);
+            //carTwo.MakeEngineNoise(carTwo.EngineNoise);
+            //carThree.MakeEngineNoise(carThree.EngineNoise);
+            //Console.WriteLine();
+            //Console.WriteLine($"This is the list of honking noises:");
+            //carOne.MakeHonkNoise(carOne.HonkNoise);
+            //carTwo.MakeHonkNoise(carTwo.HonkNoise);
+            //carThree.MakeHonkNoise(carThree.HonkNoise);
+            //Console.WriteLine();
 
-            Console.WriteLine($"Here is list of cars in the West Lot: ");
-            foreach (var car in westLot.CarList)
-            {
-                Console.WriteLine($"Year: {car.Year} Make: {car.Make}  Model: {car.Model}");
-            }
-    
+
 
             //*************BONUS*************//
 
