@@ -20,7 +20,7 @@ namespace CarLotSimulator
             //Call each of the methods for each car
 
 
-            // DONE -- includes changes in CarLot Tab. CURRENT TODO ** Exercise 2: Building on our car lot simulator project, create a CarLot class with a static field called numberOfCars. Have this number only increment when in our program we create a new Car. From there create 3 cars in the Main() and then each time you create a car, do a Console.WriteLine() printing the current number of cars in the car lot. 
+            // DONE -- includes changes in CarLot Tab.  TODO ** Exercise 2: Building on our car lot simulator project, create a CarLot class with a static field called numberOfCars. Have this number only increment when in our program we create a new Car. From there create 3 cars in the Main() and then each time you create a car, do a Console.WriteLine() printing the current number of cars in the car lot. 
 
 
             // Using Dot Notation
@@ -32,8 +32,10 @@ namespace CarLotSimulator
             carOne.HonkNoise = "beep-beep";
             carOne.IsDrivable = true;
             // adding this car to our carLot
-            CarLot.AddCar(carOne);
-            CarLot.PrintLotData();
+            Console.WriteLine($"\nCurrent Number of Cars: {CarLot.numberOfCars}" +
+                $"\n");
+            Console.WriteLine($"Year: {carOne.Year} Make: {carOne.Make}  Model: {carOne.Model}\n\n");
+
 
             // Object initializer cyntax
             var carTwo = new Car()
@@ -45,14 +47,17 @@ namespace CarLotSimulator
                 HonkNoise = "bleep",
                 IsDrivable = true
             };
-            CarLot.AddCar(carTwo);
-            CarLot.PrintLotData();
+            //CarLot.AddCar(carTwo);
+            Console.WriteLine($"\nCurrent Number of Cars: {CarLot.numberOfCars}\n");
+            Console.WriteLine($"Year: {carTwo.Year} Make: {carTwo.Make}  Model: {carTwo.Model}\n\n");
+            
 
             // Using a constructor
             var carThree = new Car(2013, "Honda", "Civic", "vrrrroom", "vruuuga", true);
-            CarLot.AddCar(carThree);
-            CarLot.PrintLotData();
-
+            //CarLot.AddCar(carThree);
+            Console.WriteLine($"\nCurrent Number of Cars: {CarLot.numberOfCars}\n");
+            Console.WriteLine($"Year: {carThree.Year} Make: {carThree.Make}  Model: {carThree.Model}\n\n");
+            
 
             //Calling methods
             //Console.WriteLine($"This is the list of engine noises:");
